@@ -8,8 +8,8 @@ Created on Sun May 29 11:42:25 2022
 
 from key import API_KEY
 import telebot 
-from telebot import types
-from types import KeyboardButton,ReplyKeyboardMarkup,ReplyKeyboardRemove
+from telebot import types as tele_types
+from tele_types import KeyboardButton,ReplyKeyboardMarkup,ReplyKeyboardRemove
 
 #from pydbhelper import DBHelper
 
