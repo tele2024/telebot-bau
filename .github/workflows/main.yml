@@ -20,4 +20,4 @@ jobs:
 
 
       - name: Deploy Bot
-        run: python bot.py
+        run: python myBot.py
