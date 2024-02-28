@@ -8,7 +8,8 @@ Created on Sun May 29 11:42:25 2022
 
 from key import API_KEY
 import telebot 
-#from telebot import types as tele_types
+from DBMS import add_user,setup,numOfUsers,get_user,fetch_ID
+#from telebot import types
 from telebot.types import KeyboardButton,ReplyKeyboardMarkup,ReplyKeyboardRemove
 
 #from pydbhelper import DBHelper
@@ -112,6 +113,15 @@ def send_welcome(message):
         else:
             mainbtns=KeyboardButton(mainList[i])
     bot.send_message(message.chat.id,text="كيف يمكنني مساعدتك؟",reply_markup=mainMarkup)
+    save_user(message)
+    
+def save_user(message):
+     user_id=message.from_user.id
+     firstn=message.chat.first_name 
+     lastn=message.chat.last_name 
+     user=message.chat.username
+     setup()
+     add_user(user_id,user, firstn, lastn)    
 #checks what he chose
 def showTypes(message):
     if (message.text==mainList[0]):
@@ -4262,6 +4272,39 @@ def send_social(message):
 @bot.message_handler(func=teleChannel)
 def send_teleChannel(message):
     bot.send_message(message.chat.id,text="https://t.me/+gnyyMS7vffM3Yjg0",protect_content=True)
+
+#count users
+@bot.message_handler(commands=(['show']))
+def show_user(message):     
+     bot.send_message(message.chat.id, numOfUsers())
+     print(get_user())
+
+@bot.message_handler(commands=(['send']))
+def send_message_to_phone(message):
+    # Send message to your phone asking for the message to be sent to all users
+    bot.send_message(message.chat.id, "Please reply with the message you want to send to all users.")
+@bot.message_handler(func=lambda message: True)
+def process_response(message):
+    # Check if the response is from your phone
+    if message.chat.id == 792159482 :
+        # Extract the message provided by you
+        message_to_send = message.text
+
+        # Send the message to all users
+        send_text(message_to_send)
+def send_text(message):
+    user_IDs=fetch_ID()
+    for user_id in user_IDs['ID']:
+        try:
+            bot.send_message(user_id,message)
+        except telebot.apihelper.ApiException as e:
+            if e.result.status_code == 403 and "bot was blocked by the user" in e.result.text:
+            # User has blocked the bot
+                print(f"User {user_id} has blocked the bot.")
+            # Handle the situation accordingly (e.g., disable certain functionalities for the user)
+            else:
+            # Handle other API errors
+                print("API Error:", e)
 
 
 from threading import Thread
