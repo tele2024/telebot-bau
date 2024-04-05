@@ -404,15 +404,15 @@ def arab1Book(message):
 
 @bot.message_handler(func=arab1Quest)
 def send_arab1Quest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1BnSwnblPUrFR-alms8dmY56vRzQCAJV3?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1mC_G1M5OtiShtYrj7djgXXmpjxqacAOF?usp=drive_link")
 
 @bot.message_handler(func=arab1Summary)
 def send_arab1Summary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1GX1sGouTz6pMICNw9u3doeDVP_4s777f?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1GaxvkVeKCQNoB25W0zHWQReMuclbohPL?usp=drive_link")
 
 @bot.message_handler(func=arab1Book)
 def send_arab1Book(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KuuZwnRHGr-iBGp1N0F2-FknOcsHx4Mk?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1mRxtOWly7xSCG-1Q2jyfC2czw2_-C8gi?usp=drive_link")
 
 #labcomp1
 @bot.message_handler(func=labComp1)
@@ -1082,7 +1082,7 @@ def send_labComp2slides(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1JZXK7GfjxNa9IQqpdIgknxyQteSsyCmD?usp=sharing")
 
 #introduction to Computer programming
-
+collMandListEdt[10]="سلايدات وملخص مقدمة الى برمجة الحاسوب"
 @bot.message_handler(func=intro)
 def send_intro(message):
     introMarkup=ReplyKeyboardMarkup()
@@ -1110,15 +1110,14 @@ def introBook(message):
 
 @bot.message_handler(func=introQuest)
 def send_introQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1cJA-5pfl5htmSx3S0OZaQZURhNn8oL9-?usp=sharing")
-
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1w36sxUe5YmVDcUHoPuVaRKDtwztU8hi3?usp=drive_link")
 @bot.message_handler(func=introSummary)
 def send_introSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1cRzsC1oIEoWsJFl4GP03xZaahlzfvr5e?usp=sharing")
-
+    bot.send_message(message.chat.id,text="سلايدات : https://drive.google.com/drive/folders/1W9bpOOmRzjizT4Aq7UgF_qIA1Yb8nDeb?usp=drive_link")
+    bot.send_message(message.chat.id,text="ملخص : https://drive.google.com/drive/folders/1PqjJH0A-jb2JRfNtx0P4ZvSxObpQH0vL?usp=drive_link")
 @bot.message_handler(func=introBook)
 def send_introBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1fwusi4ROAVhH0090zZOmS-gzHYeEFH_O?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1lU15xCDJVvV_QXzT_A_MsXAEYIjb2Run?usp=drive_link")
 
 #comp2
 
@@ -1189,7 +1188,7 @@ def objecBook(message):
 
 @bot.message_handler(func=objecQuest)
 def send_objecQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1892HdMgDbgL-GTasNrI-vcopEipc4cXP?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1UKMA5TbJLp57-TsNbo3oSYQuxHYepaOT?usp=drive_link")
 
 @bot.message_handler(func=objecSummary)
 def send_objecSummary(message):
@@ -1197,7 +1196,7 @@ def send_objecSummary(message):
 
 @bot.message_handler(func=objecBook)
 def send_objecBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1C9qyEMNyV-G2t3h9leNhpOZ6fxYhFHl0?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Hpd4h2BajJ4YesGXW1aGZEzdpkN3js3L?usp=drive_link")
 
 #java
 
@@ -1229,15 +1228,15 @@ def javaBook(message):
 
 @bot.message_handler(func=javaQuest)
 def send_javaQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1qk7VdXHUCXfUO5CIAVq2szPX0vrlvJZw?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1WIPsMjGAIDRVCLyWs2dTSWsNVa5I9A0t?usp=drive_link")
 
 @bot.message_handler(func=javaSummary)
 def send_javaSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1MJpG5T3osyRlwQbiH2Gqty9960C329kC?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18Q2b8d3FGivr4SOyk9MaRrtxqq4Zoqan?usp=drive_link")
 
 @bot.message_handler(func=javaBook)
 def send_javaBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16yhWPwrA_TKTfY9j8T1tKTZfomsGg2op?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1L-IMvPLQdsKueGtzE5EmbeoCa8LAmXAp?usp=drive_link")
 
 #labObject
 collMandListEdt[22]="سلايدات مختبر البرمجة الموجهة للكائنات"
@@ -1530,13 +1529,13 @@ def dbCSBook(message):
         return False
 @bot.message_handler(func=dbCSQuest)
 def send_dbCSQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1u2eCUUY4JaFpw1BE_BzgXskRPdrnDna_?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1pkiJEQKNeHHNS6w9VThTaP32kYqZ9WDP?usp=sharing")
 @bot.message_handler(func=dbCSSummary)
 def send_dbCSSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18Jo0u6hIOfJpe-5UCIFSKbFvddU2Bu6V?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1IVIMVz2sTO7cMZdQAQWEFjgkQYbSxXFy?usp=sharing")
 @bot.message_handler(func=dbCSBook)
 def send_dbCSBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1D-kKZNw4KGSPMhgDRNJelg4sRh-77ORo?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1XTIkTEqq7P_Au7lycCnjyz_kguXUgTUD?usp=drive_link")
 
 # Db CS lab
 @bot.message_handler(func=dbCSLab)
@@ -1545,8 +1544,6 @@ def send_dbCSLab(message):
     dbCSLabbtn=[]
     CSMand_listEdt[11]="سلايدات مختبر تصميم وادارة قواعد البيانات (1)"
     for i in range(9,12):
-        if(i==10):
-            continue
         dbCSLabbtn=KeyboardButton(CSMand_listEdt[i])
         dbCSLabMarkup.add(dbCSLabbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=dbCSLabMarkup)
@@ -1555,19 +1552,25 @@ def dbCSLabQuest(message):
         return True
     else:
         return False
-
-def dbCSLabBook(message):
+def dbCSLabSummary(message):
+    if(message.text==CSMand_listEdt[10]):
+        return True
+    else:
+        return False
+def dbCSLabSlides(message):
     if(message.text==CSMand_listEdt[11]):
         return True
     else:
         return False
 @bot.message_handler(func=dbCSLabQuest)
 def send_dbCSLabQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18OGV2Z4U9OZRGB7VM-DNFFFnTWXuf-lb?usp=sharing")
-
-@bot.message_handler(func=dbCSLabBook)
-def send_dbCSLabBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16g-q2c2DOKRK0x2yCe6J_m5QyfVLV3B4?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Ow52V8UlzjYOG2_yz1cUfyCo73nikMq6?usp=drive_link")
+@bot.message_handler(func=dbCSLabSummary)
+def send_dbCSLabSummary(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1TkmdG8vJpXV4EVhohKeqEOYx52W71XlC?usp=drive_link")
+@bot.message_handler(func=dbCSLabSlides)
+def send_dbCSLabSlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1cyH4eVjAjixgE_ystZIIGFvMCnwp5C9Q?usp=drive_link")
 
 #Algorithm CS
 @bot.message_handler(func=algoCS)
@@ -1604,8 +1607,8 @@ def send_algoCSBook(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1rF9OAak8fCVqcfEL7W6F7O_r_7gHHdMT?usp=sharing")
 
 #DS CS 
-CSMand_listEdt[15]="سلايدات هياكل البيانات"
-CSMand_listEdt[16]="سليباس هياكل البيانات"
+
+CSMand_listEdt[16]="سلايدات هياكل البيانات"
 @bot.message_handler(func=DSCS)
 def send_DSCS(message):
     DSCSMarkup=ReplyKeyboardMarkup()
@@ -1614,12 +1617,12 @@ def send_DSCS(message):
        DSCSbtn=KeyboardButton(CSMand_listEdt[i])
        DSCSMarkup.add(DSCSbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=DSCSMarkup)
-def DSCSslides(message):
+def DSCSQuest(message):
     if(message.text==CSMand_listEdt[15]):
         return True
     else:
         return False
-def DSCSsyll(message):
+def DSCSslides(message):
     if(message.text==CSMand_listEdt[16]):
         return True
     else:
@@ -1631,13 +1634,13 @@ def DSCSBook(message):
         return False
 @bot.message_handler(func=DSCSslides)
 def send_DSCSslides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16A3gAC0ykE-QTShSz6wM1GpD27REwlWO?usp=sharing")
-@bot.message_handler(func=DSCSsyll)
-def send_DSCSsyll(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1azDQ23E6jCJOOIwXni74cBFRO75T6fDd?usp=sharing") 
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1M8vOv68NqPxo9tWunn82xfSc3JwMG4Gz?usp=drive_link")
+@bot.message_handler(func=DSCSQuest)
+def send_DSCSQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1zpEaFyYo5l6d8E4NKmnP1ixJixJxLAcb?usp=drive_link") 
 @bot.message_handler(func=DSCSBook)
 def send_DSCSBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1AhV-tKevrFtp4KZqLgmOKzeisrx6b1aH?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KPFM3tD7AcZ9H-Gaq8C51DH_AWQCxqqM?usp=drive_link")
 #DS CS LAB 
 
 CSMand_listEdt[20]="سلايدات مختبر هياكل البيانات"
@@ -1664,11 +1667,11 @@ def DSCSlabSlides(message):
         return False
 @bot.message_handler(func=DSCSlabQuest)
 def send_DSCSlabQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1HpNcTV__7iO9tnMl24OBIE_jmIkuzvHz?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1X7RQbrClMj0TkczfaoYbhhKJ_0k47YfS?usp=drive_link")
 
 @bot.message_handler(func=DSCSlabSlides)
 def send_DSCSlabSlides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1reLV2UR4sYJexAJWktDSKICiBJrdwWLA?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/14BdLdtkwva4EvIYExEXh4NfO7tJo7yPT?usp=drive_link")
 
 #Android CS 
 
@@ -1737,7 +1740,7 @@ def send_AndCSlabSlides(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1IuZKQ4Y7kfE52kLa-YB8q0ZJ2mpktdXI?usp=sharing")
 
 #AI CS 
-CSMand_listEdt[27]="سلايدات الذكاء الاصطناعي"
+
 @bot.message_handler(func=AICS)
 def send_AICS(message):
     AICSMarkup=ReplyKeyboardMarkup()
@@ -1746,7 +1749,7 @@ def send_AICS(message):
        AICSbtn=KeyboardButton(CSMand_listEdt[i])
        AICSMarkup.add(AICSbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=AICSMarkup)
-def AICSSlides(message):
+def AICSQuest(message):
     if(message.text==CSMand_listEdt[27]):
         return True
     else:
@@ -1761,15 +1764,15 @@ def AICSBook(message):
         return True
     else:
         return False
-@bot.message_handler(func=AICSSlides)
-def send_AICSSlides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1S4wp5fai69SuhS0lkFj_l15vr6KUexSW?usp=sharing")
+@bot.message_handler(func=AICSQuest)
+def send_AICSQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1CMnRNSUcj-HOQZFHsCXakCimudsy3qV9?usp=drive_link")
 @bot.message_handler(func=AICSSummary)
 def send_AICSSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1k2sGDu-D-rbcPsIYq7aZZ3viZzRkODth?usp=sharing") 
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1MfhaG3Xb2EGY8Ltw-9_chmZqp3prQEtT?usp=drive_link") 
 @bot.message_handler(func=AICSBook)
 def send_AICSBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1fK2IUmZ9YS4M416DDoCQw6YfUK4CE4S4?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/11uZdXHqWu9mfR7Ad-PRLMyO71pld39Lj?usp=drive_link")
 
 #Theory of Computation and Automata
 @bot.message_handler(func=AutoCS)
@@ -2025,13 +2028,13 @@ def WirlessCSBook(message):
         return False
 @bot.message_handler(func=WirlessCSQuest)
 def send_WirlessCSQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1BJ7keQ9ekJcT0ICTKlFlJ7hgntxN7J8t?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1GQ7YqSXf4hZ0SqzQyXp1SI-akmWgjY92?usp=drive_link")
 @bot.message_handler(func=WirlessCSSummary)
 def send_WirlessCSSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1b3WKU9Paf2HD78Knm06xQTWi0MerKaYX?usp=sharing") 
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1sILGfu8WU_mBTW7DUSe0V8Loc59auBnx?usp=drive_link") 
 @bot.message_handler(func=WirlessCSBook)
 def send_WirlessCSBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1JZK0HJTHBBBOo7bBKJ-wfdLicpX5osz8?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Ks_YA8tvM4935ydHwA9e_lH0XtHblsf-?usp=drive_link")
 
 #Compiler CS
 
@@ -2384,13 +2387,13 @@ def dbCISBook(message):
         return False
 @bot.message_handler(func=dbCISQuest)
 def send_dbCISQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1u2eCUUY4JaFpw1BE_BzgXskRPdrnDna_?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1pkiJEQKNeHHNS6w9VThTaP32kYqZ9WDP?usp=drive_link")
 @bot.message_handler(func=dbCISSummary)
 def send_dbCISSummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18Jo0u6hIOfJpe-5UCIFSKbFvddU2Bu6V?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1IVIMVz2sTO7cMZdQAQWEFjgkQYbSxXFy?usp=drive_link")
 @bot.message_handler(func=dbCISBook)
 def send_dbCISBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1D-kKZNw4KGSPMhgDRNJelg4sRh-77ORo?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1XTIkTEqq7P_Au7lycCnjyz_kguXUgTUD?usp=drive_link")
 
 # Db CIS lab
 @bot.message_handler(func=dbCISLab)
@@ -2399,8 +2402,6 @@ def send_dbCISLab(message):
     dbCISLabbtn=[]
     CISMand_listEdt[14]="سلايدات مختبر نماذج وقواعد البيانات"
     for i in range(12,15):
-        if(i==13):
-            continue
         dbCISLabbtn=KeyboardButton(CISMand_listEdt[i])
         dbCISLabMarkup.add(dbCISLabbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=dbCISLabMarkup)
@@ -2409,24 +2410,30 @@ def dbCISLabQuest(message):
         return True
     else:
         return False
-
-def dbCISLabBook(message):
+def dbCISLabSummary(message):
+    if(message.text==CISMand_listEdt[13]):
+        return True
+    else:
+        return False
+def dbCISLabSlides(message):
     if(message.text==CISMand_listEdt[14]):
         return True
     else:
         return False
 @bot.message_handler(func=dbCISLabQuest)
 def send_dbCISLabQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18OGV2Z4U9OZRGB7VM-DNFFFnTWXuf-lb?usp=sharing")
-
-@bot.message_handler(func=dbCISLabBook)
-def send_dbCISLabBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16g-q2c2DOKRK0x2yCe6J_m5QyfVLV3B4?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Ow52V8UlzjYOG2_yz1cUfyCo73nikMq6?usp=drive_link")
+@bot.message_handler(func=dbCISLabSummary)
+def send_dbCISLabSummary(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1TkmdG8vJpXV4EVhohKeqEOYx52W71XlC?usp=drive_link")
+@bot.message_handler(func=dbCISLabSlides)
+def send_dbCISLabSlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1cyH4eVjAjixgE_ystZIIGFvMCnwp5C9Q?usp=drive_link")
 
 #DS CIS 
 
-CISMand_listEdt[15]="سلايدات هياكل البيانات والملفات (1)"
-CISMand_listEdt[16]="سليباس هياكل البيانات والملفات (1)"
+
+CISMand_listEdt[16]="سلايدات هياكل البيانات والملفات (1)"
 @bot.message_handler(func=DSCIS)
 def send_DSCIS(message):
     DSCISMarkup=ReplyKeyboardMarkup()
@@ -2435,16 +2442,19 @@ def send_DSCIS(message):
        DSCISbtn=KeyboardButton(CISMand_listEdt[i])
        DSCISMarkup.add(DSCISbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=DSCISMarkup)
-def DSCISslides(message):
+
+def DSCISQuest(message):
     if(message.text==CISMand_listEdt[15]):
         return True
     else:
-        return False
-def DSCISsyll(message):
+        return False    
+
+def DSCISslides(message):
     if(message.text==CISMand_listEdt[16]):
         return True
     else:
         return False
+
 def DSCISBook(message):
     if(message.text==CISMand_listEdt[17]):
         return True
@@ -2452,13 +2462,13 @@ def DSCISBook(message):
         return False
 @bot.message_handler(func=DSCISslides)
 def send_DSCISslides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16A3gAC0ykE-QTShSz6wM1GpD27REwlWO?usp=sharing")
-@bot.message_handler(func=DSCISsyll)
-def send_DSCISsyll(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1azDQ23E6jCJOOIwXni74cBFRO75T6fDd?usp=sharing") 
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1M8vOv68NqPxo9tWunn82xfSc3JwMG4Gz?usp=drive_link")
+@bot.message_handler(func=DSCISQuest)
+def send_DSCISQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1zpEaFyYo5l6d8E4NKmnP1ixJixJxLAcb?usp=drive_link") 
 @bot.message_handler(func=DSCISBook)
 def send_DSCISBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1AhV-tKevrFtp4KZqLgmOKzeisrx6b1aH?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KPFM3tD7AcZ9H-Gaq8C51DH_AWQCxqqM?usp=drive_link")
 
 #DS CIS LAB
 
@@ -2486,11 +2496,11 @@ def DSCISlabSlides(message):
         return False
 @bot.message_handler(func=DSCISlabQuest)
 def send_DSCISlabQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1HpNcTV__7iO9tnMl24OBIE_jmIkuzvHz?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1X7RQbrClMj0TkczfaoYbhhKJ_0k47YfS?usp=drive_link")
 
 @bot.message_handler(func=DSCISlabSlides)
 def send_DSCISlabSlides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1reLV2UR4sYJexAJWktDSKICiBJrdwWLA?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/14BdLdtkwva4EvIYExEXh4NfO7tJo7yPT?usp=drive_link")
 
 
 #Algorithm CIS 
@@ -3019,13 +3029,13 @@ def dbSEBook(message):
         return False
 @bot.message_handler(func=dbSEQuest)
 def send_dbSEQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1u2eCUUY4JaFpw1BE_BzgXskRPdrnDna_?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1pkiJEQKNeHHNS6w9VThTaP32kYqZ9WDP?usp=drive_link")
 @bot.message_handler(func=dbSESummary)
 def send_dbSESummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18Jo0u6hIOfJpe-5UCIFSKbFvddU2Bu6V?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1IVIMVz2sTO7cMZdQAQWEFjgkQYbSxXFy?usp=drive_link")
 @bot.message_handler(func=dbSEBook)
 def send_dbSEBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1D-kKZNw4KGSPMhgDRNJelg4sRh-77ORo?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1XTIkTEqq7P_Au7lycCnjyz_kguXUgTUD?usp=drive_link")
 
 # DB SE Lab
 @bot.message_handler(func=dbSELab)
@@ -3292,7 +3302,7 @@ def send_componentSESlide(message):
 
 #Principle of SE 
 SEMand_listEdt[45]="سلايدات مباديء هندسة البرمجيات"
-SEMand_listEdt[46]="دفتر مباديء هندسة البرمجيات"
+SEMand_listEdt[46]="دفتر وملخص مباديء هندسة البرمجيات"
 @bot.message_handler(func=principleSESE)
 def send_principleSESE(message):
     principleSESEMarkup=ReplyKeyboardMarkup()
@@ -3318,18 +3328,19 @@ def principleSESEBook(message):
         return False
 @bot.message_handler(func=principleSESESlides)
 def send_principleSESEslides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1bGGSt9odbJHqhvFvEXlJ7Wn4DEuRLv9r?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1TAkOFsPju0ebeZJwDXXTcsUtF4NGxWpN?usp=sharing")
 @bot.message_handler(func=principleSESEnote)
 def send_principleSESEnote(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1fFj-RmcdKxV9IVqXShOyqcAzezQAc0O0?usp=sharing") 
+    bot.send_message(message.chat.id,text="دفتر : https://drive.google.com/drive/folders/1drrlSXfkqTzazv8va7woILginNs9mW9a?usp=sharing")
+    bot.send_message(message.chat.id,text="ملخص : https://drive.google.com/drive/folders/193JvZafCwFS4P_inXPhAkLkflvOXlNYU?usp=sharing")
 @bot.message_handler(func=principleSESEBook)
 def send_principleSESEBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1AyiLiOJfmI0N1Ey65h6Fjhi_RfmE_GhA?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1s8fNLWrOIH2o9-FPh5NT-3a-ZcN2FrK9?usp=drive_link")
 
 
 #DS SE 
-SEMand_listEdt[48]="سلايدات البرامج والملفات والبيانات"
-SEMand_listEdt[49]="سليباس هيكلة البرامج والملفات والبيانات"
+
+SEMand_listEdt[49]="سلايدات البرامج والملفات والبيانات"
 @bot.message_handler(func=DSSE)
 def send_DSSE(message):
     DSSEMarkup=ReplyKeyboardMarkup()
@@ -3338,12 +3349,12 @@ def send_DSSE(message):
        DSSEbtn=KeyboardButton(SEMand_listEdt[i])
        DSSEMarkup.add(DSSEbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=DSSEMarkup)
-def DSSEslides(message):
+def DSSEQuest(message):
     if(message.text==SEMand_listEdt[48]):
         return True
     else:
         return False
-def DSSEsyll(message):
+def DSSEslides(message):
     if(message.text==SEMand_listEdt[49]):
         return True
     else:
@@ -3355,13 +3366,13 @@ def DSSEBook(message):
         return False
 @bot.message_handler(func=DSSEslides)
 def send_DSSEslides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16A3gAC0ykE-QTShSz6wM1GpD27REwlWO?usp=sharing")
-@bot.message_handler(func=DSSEsyll)
-def send_DSSEsyll(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1azDQ23E6jCJOOIwXni74cBFRO75T6fDd?usp=sharing") 
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1M8vOv68NqPxo9tWunn82xfSc3JwMG4Gz?usp=drive_link")
+@bot.message_handler(func=DSSEQuest)
+def send_DSSEQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1zpEaFyYo5l6d8E4NKmnP1ixJixJxLAcb?usp=drive_link") 
 @bot.message_handler(func=DSSEBook)
 def send_DSSEBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1AhV-tKevrFtp4KZqLgmOKzeisrx6b1aH?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KPFM3tD7AcZ9H-Gaq8C51DH_AWQCxqqM?usp=sharing")
 
 #DS SE LAB
 
@@ -3389,11 +3400,11 @@ def DSSElabSlides(message):
         return False
 @bot.message_handler(func=DSSElabQuest)
 def send_DSSElabQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1HpNcTV__7iO9tnMl24OBIE_jmIkuzvHz?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1X7RQbrClMj0TkczfaoYbhhKJ_0k47YfS?usp=sharing")
 
 @bot.message_handler(func=DSSElabSlides)
 def send_DSSElabSlides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1reLV2UR4sYJexAJWktDSKICiBJrdwWLA?usp=sharing")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/14BdLdtkwva4EvIYExEXh4NfO7tJo7yPT?usp=sharing")
 
 #OS SE 
 @bot.message_handler(func=OSSE)
@@ -3465,7 +3476,7 @@ def send_objectSEBook(message):
 
 #Requirement SE
 SEMand_listEdt[60]="سلايدات هندسة ووصف متطلبات البرمجيات"
-SEMand_listEdt[61]="دفتر هندسة ووصف متطلبات البرمجيات"
+SEMand_listEdt[61]="دفتر زملخص هندسة ووصف متطلبات البرمجيات"
 @bot.message_handler(func=reqSE)
 def send_reqSE(message):
     reqSEMarkup=ReplyKeyboardMarkup()
@@ -3490,14 +3501,15 @@ def reqSEBook(message):
     else:
         return False
 @bot.message_handler(func=reqSESlides)
-def send_reqSEQuest(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1vf8YszaQ9iaX93SozCWSHz1oyWb0-RLO?usp=share_link")
+def send_reqSESlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KtaSvwq1r11Ilvbmd3oFCAh56yGifNd8?usp=drive_link")
 @bot.message_handler(func=reqSEnote)
 def send_reqSESummary(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1KtaSvwq1r11Ilvbmd3oFCAh56yGifNd8?usp=share_link") 
+    bot.send_message(message.chat.id,text="دفتر : https://drive.google.com/drive/folders/1vf8YszaQ9iaX93SozCWSHz1oyWb0-RLO?usp=drive_link")
+    bot.send_message(message.chat.id,text="ملخص :https://drive.google.com/drive/folders/1Yep-u_wjf8xdRm9Y92UVyaQAP_xPPItt?usp=drive_link") 
 @bot.message_handler(func=reqSEBook)
 def send_reqSEBook(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1aOISRgGGIf93UwP3fKMrWmhQrO3Fs41T?usp=share_link")
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1aOISRgGGIf93UwP3fKMrWmhQrO3Fs41T?usp=drive_link")
 
 
 ########################
