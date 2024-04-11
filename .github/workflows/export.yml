@@ -1,0 +1,32 @@
+name: Export SQLite Database to CSV
+
+on:
+  schedule:
+    - cron: "0 */5 * * *"
+
+jobs:
+  export_to_csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Export Database to CSV
+        run: python export_to_csv.py
+
+      - name: Save CSV as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: database-export
+          path: users.csv
