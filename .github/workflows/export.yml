@@ -24,8 +24,8 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Export Database to CSV
-        run: python export_to_csv.py
-
       - name: Deploy Bot
         run: python myBot.py
+
+      - name: Export Database to CSV
+        run: python export_to_csv.py
