@@ -114,6 +114,7 @@ def send_welcome(message):
             mainbtns=KeyboardButton(mainList[i])
     bot.send_message(message.chat.id,text="كيف يمكنني مساعدتك؟",reply_markup=mainMarkup)
     save_user(message)
+    export_to_csv()
     
 def save_user(message):
      user_id=message.from_user.id
@@ -122,7 +123,7 @@ def save_user(message):
      user=message.chat.username
      setup()
      add_user(user_id,user, firstn, lastn)
-     export_to_csv()
+     
 
 #checks what he chose
 def showTypes(message):
