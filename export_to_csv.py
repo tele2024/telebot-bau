@@ -11,7 +11,7 @@ import pandas as pd
 def export_to_csv():
     conn = sqlite3.connect('bot.example')
     df = pd.read_sql_query("SELECT * FROM users", conn)
-    df.to_csv('users.csv', index=False)
+    df.to_csv('users.csv', index=False, encoding='utf-16', sep='\t')
 
 if __name__ == "__main__":
     export_to_csv()
