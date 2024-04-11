@@ -28,6 +28,11 @@ def add_user(Id,username,first,last):
         # If the ID already exists, update the user's first and last name
         c.execute("UPDATE users SET firstname=?, lastname=?, Username=? WHERE ID=? ", (first, last , username,Id))
         conn.commit()
+
+def export_to_csv():
+    df = pd.read_sql_query("SELECT * FROM users", conn)
+    df.to_csv('users.csv', index=False, encoding='utf-16', sep='\t')
+
 def get_user():
     c.execute("SELECT * FROM users")
     table_name="users"
@@ -47,6 +52,18 @@ def fetch_ID():
     # Close database connection
     conn.close()
     return user_ids_df
+
+def fetch_last_5_users():
+    # Retrieve the last 5 users based on the ID in descending order
+    c.execute("SELECT firstname FROM users ORDER BY firstname DESC LIMIT 5")
+    lastuser_ids = c.fetchall()
+    lastuser_ids_df = pd.DataFrame(lastuser_ids, columns=['firstname'])
+    conn.close()
+    return lastuser_ids_df 
+
+
+
+
     
 
 

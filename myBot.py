@@ -8,7 +8,7 @@ Created on Sun May 29 11:42:25 2022
 
 from key import API_KEY
 import telebot 
-from DBMS import add_user,setup,numOfUsers,get_user,fetch_ID
+from DBMS import add_user,setup,numOfUsers,get_user,fetch_ID,export_to_csv
 #from telebot import types
 from telebot.types import KeyboardButton,ReplyKeyboardMarkup,ReplyKeyboardRemove
 
@@ -84,10 +84,10 @@ SEMand_list=["قواعد البيانات","مختبر قواعد البيانا
 SEMand_listEdt=[]
 concatFirstSum(SEMand_list, "اسئلة", "ملخص", "كتاب", SEMand_listEdt)
 majorOptlist=["علم الحاسوب","نظم المعلومات الحاسوبية","رسم الحاسوبي والرسوم المتحركة"]
-CSOptlist=["الوسائط المتعددة","الحوسبة السحابية","معالجة الصور والرؤيا الرقمية","مواضيع خاصة في علم الحاسوب","الذكاء الاصطناعي المتقدم والتعلم الآلي"]
+CSOptlist=["الوسائط المتعددة","الحوسبة السحابية","معالجة الصور والرؤيا الرقمية","مواضيع خاصة في علم الحاسوب","الذكاء الاصطناعي المتقدم والتعلم الآلي","ادارة نظم قواعد البيانات"]
 CSOptlistEdt=[]
 concatFirstSum(CSOptlist, "اسئلة", "ملخص", "كتاب", CSOptlistEdt)
-CISOptlist=["تصنيف وتقييم الانماط","انظمة المعـلومات الجغرافية"]
+CISOptlist=["تصنيف وتقييم الانماط","انظمة المعـلومات الجغرافية","انظمة التجارة الالكترونية"]
 CISOptlistEdt=[]
 concatFirstSum(CISOptlist, "اسئلة", "ملخص", "كتاب", CISOptlistEdt)
 CGAMandlist=["تحليل وتصميم الخوارزميات","تصميم وادارة قواعد البيانات (1)","مختبر تصميم وادارة قواعد البيانات (1)","الرياضيات للرسم الحاسوبي","مبادئ الرسم الحاسوبي","طرق التلوين","الرسوم المتحركة ثنائية الابعاد","مختبر الرسوم المتحركة ثنائية الابعاد","تطبيقات الحاسوب في الفنون","البرمجة المرئية للرسم الحاسوبي","برمجة تطبيقات الانترنت","مختبر برمجة تطبيقات الانترنت","الرسومات التفاعلية","تصميم القصة المصورة","تصميم النماذج ثلاثية الابعاد","تصميم الشخصيات ثلاثية الابعاد","الوسائط المتعددة","تحريك الشخصيات ثلاثية الابعاد","تفاعل الانسان والحاسب الآلي","تصميم الافلام الرقمية","مختبر تصميم الافلام الرقمية"]
@@ -121,7 +121,9 @@ def save_user(message):
      lastn=message.chat.last_name 
      user=message.chat.username
      setup()
-     add_user(user_id,user, firstn, lastn)    
+     add_user(user_id,user, firstn, lastn)
+     export_to_csv()
+
 #checks what he chose
 def showTypes(message):
     if (message.text==mainList[0]):
@@ -2539,9 +2541,41 @@ def send_algoCISBook(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1rF9OAak8fCVqcfEL7W6F7O_r_7gHHdMT?usp=sharing")
 
 #Advance CIS 
+
+CISMand_listEdt[25]="سلايدات وواجبات ادارة نظم قواعد البيانات"
 @bot.message_handler(func=AdvanceCIS)
-def send_AdvanceCIS(message):
-    bot.send_message(message.chat.id,text="المعذرة لا نملك معلومات عن هذه المادة ان وجد لديك ماا قد يفيدنا ويفيد الطلاب يرجى مراسلة صاحب البوت ")
+def send_Advance(message):
+    AdvanceMarkup=ReplyKeyboardMarkup()
+    Advancebtn=[]
+    for i in range(24,27):
+       Advancebtn=KeyboardButton(CISMand_listEdt[i])
+       AdvanceMarkup.add(Advancebtn)
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=AdvanceMarkup)
+def AdvanceQuest(message):
+    if(message.text==CISMand_listEdt[24]):
+        return True
+    else:
+        return False
+def AdvanceSummary(message):
+    if(message.text==CISMand_listEdt[25]):
+        return True
+    else:
+        return False
+def AdvanceBook(message):
+    if(message.text==CISMand_listEdt[26]):
+        return True
+    else:
+        return False
+@bot.message_handler(func=AdvanceQuest)
+def send_CISoptQuest(message):
+    bot.send_message(message.chat.id,text="الكويز الاول : https://drive.google.com/drive/folders/13ZEWnZwaThDn9sxPtWJKBDGj9jlUzp3y?usp=drive_link")
+@bot.message_handler(func=AdvanceSummary)
+def send_CISoptSummary(message):
+    bot.send_message(message.chat.id,text="سلايدات : https://drive.google.com/drive/folders/1aje4Px83Q2s_OS3Jq-DTtX3IzOR6fiha?usp=drive_link") 
+    bot.send_message(message.chat.id,text="واجبات : https://drive.google.com/drive/folders/1OUiEUVcvEhX8UtZxOAbS4uIOa6vVl3tm?usp=drive_link")
+@bot.message_handler(func=AdvanceBook)
+def send_CISoptBook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1n47YV713TBaqF7OSCl17FNC0lFacTfNm?usp=drive_link")
 
 #Advance Lab CIS 
 @bot.message_handler(func=AdvanceLabCIS)
@@ -3069,9 +3103,39 @@ def send_dbSELabBook(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/16g-q2c2DOKRK0x2yCe6J_m5QyfVLV3B4?usp=sharing")
 
 #tools
+SEMand_listEdt[7]="سلايدات اداوت بناء البرمجيات"
 @bot.message_handler(func=ToolSE)
-def send_SE(message):
-    bot.send_message(message.chat.id,text="نعتذر لا وجود لأي شيء يتعلق بهذه المادة يرجى التواصل مع صاحب البوت في حال وجود ما لديكم يفيد في هذه المادة وشكرًا")
+def send_ToolSE(message):
+    ToolSEMarkup=ReplyKeyboardMarkup()
+    ToolSEbtn=[]
+    for i in range(7,9):
+       ToolSEbtn=KeyboardButton(SEMand_listEdt[i])
+       ToolSEMarkup.add(ToolSEbtn)
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=ToolSEMarkup)
+"""def ToolSEQuest(message):
+    if(message.text==SEMand_listEdt[6]):
+        return True
+    else:
+        return False"""
+def ToolSESlides(message):
+    if(message.text==SEMand_listEdt[7]):
+        return True
+    else:
+        return False
+def ToolSEBook(message):
+    if(message.text==SEMand_listEdt[8]):
+        return True
+    else:
+        return False
+"""@bot.message_handler(func=ToolSEQuest)
+def send_ToolSEQuest(message):
+    bot.send_message(message.chat.id,text="")"""
+@bot.message_handler(func=ToolSESlides)
+def send_ToolSESlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1LXo-UGT8xPGpU9OAWeYLHO5U-f2sCUky?usp=drive_link") 
+@bot.message_handler(func=ToolSEBook)
+def send_ToolSEBook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1JuTj--iJyVPs_gwCIViPsUhjYS1WfLlH?usp=drive_link")
 
 #Testing 
 @bot.message_handler(func=TestSE)
@@ -4130,6 +4194,47 @@ def GISCISopt(message):
         return True
     else:
         return False
+def EcommerceCISopt(message):
+    if(message.text==CISOptlist[2]):
+        return True
+    else:
+        return False
+
+#E-commerce 
+CISOptlistEdt[7]="سلايدات انظمة التجارة الالكترونية"
+@bot.message_handler(func=EcommerceCISopt)
+def send_EcommerceCISopt(message):
+    EcommerceCISoptMarkup=ReplyKeyboardMarkup()
+    EcommerceCISoptbtn=[]
+    for i in range(7,9):
+       EcommerceCISoptbtn=KeyboardButton(CISOptlistEdt[i])
+       EcommerceCISoptMarkup.add(EcommerceCISoptbtn)
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=EcommerceCISoptMarkup)
+"""def EcommerceCISoptQuest(message):
+    if(message.text==CISOptlistEdt[6]):
+        return True
+    else:
+        return False"""
+def EcommerceCISoptSlides(message):
+    if(message.text==CISOptlistEdt[7]):
+        return True
+    else:
+        return False
+def EcommerceCISoptBook(message):
+    if(message.text==CISOptlistEdt[8]):
+        return True
+    else:
+        return False
+"""@bot.message_handler(func=EcommerceCISoptQuest)
+def send_EcommerceCISoptQuest(message):
+    bot.send_message(message.chat.id,text="")"""
+@bot.message_handler(func=EcommerceCISoptSlides)
+def send_EcommerceCISoptSlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1WEbsOpgA7X232UWhXtSqW3ERv-cQmH5O?usp=drive_link") 
+@bot.message_handler(func=EcommerceCISoptBook)
+def send_EcommerceCISoptBook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1CEO6UhKXi8aKsgYO82BXqxfvOiqKq6Yv?usp=drive_link")
+
 #CIS pattern classification and clustering
 CISOptlistEdt[0]="سلايدات تصنيف وتقييم الانماط"
 CISOptlistEdt[1]="سلايدات تصنيف وتقييم الانماط مع ملاحظات"
@@ -4161,10 +4266,10 @@ def ClusCsv(message):
 def send_ClusCISoptSlides(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1XihLG_wvclM0OuSBPCELE5mUT0-nY2fN?usp=share_link")
 @bot.message_handler(func=ClusCISoptSlidesRyalat)
-def send_CISoptSummary(message):
+def send_ClusCISoptSummary(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1gcU1P7kegh9Nlk09tpxiLJJ7Fn8tBWDX?usp=sharing") 
 @bot.message_handler(func=ClusCsv)
-def send_CISoptBook(message):
+def send_ClusCISoptBook(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1r4pJCfL-hvfuIECTUIbzJ2zyyheFbVVh?usp=sharing")
 
 #GIS CIS 
@@ -4295,10 +4400,10 @@ def show_user(message):
 def send_message_to_phone(message):
     # Send message to your phone asking for the message to be sent to all users
     bot.send_message(message.chat.id, "Please reply with the message you want to send to all users.")
-@bot.message_handler(func=lambda message: True)
+@bot.message_handler(func=lambda message: message.text.startswith('السلام'))
 def process_response(message):
     # Check if the response is from your phone
-    if message.chat.id == 792159482 :
+    if message.chat.id == 792159482:
         # Extract the message provided by you
         message_to_send = message.text
 
@@ -4317,6 +4422,7 @@ def send_text(message):
             else:
             # Handle other API errors
                 print("API Error:", e)
+
 
 
 from threading import Thread
