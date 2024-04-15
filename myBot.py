@@ -3720,28 +3720,28 @@ def send_principleCGASlides(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1wGx28fxPAJWDgcd682S6cJI65xjl5KtS?usp=drive_link") 
 
 #طرق التلوين
-CGAMandlistEdt[19]="سلايدات طرق التلوين"
-CGAMandlistEdt[20]="واجبات طرق التلوين"
+CGAMandlistEdt[16]="سلايدات طرق التلوين"
+CGAMandlistEdt[17]="واجبات طرق التلوين"
 @bot.message_handler(func=colorCGA)
 def send_colorCGA(message):
     CGAcolorMarkup=ReplyKeyboardMarkup()
     CGAcolorbtn=[]
-    for i in range(18,21):
+    for i in range(15,18):
        CGAcolorbtn=KeyboardButton(CGAMandlistEdt[i])
        CGAcolorMarkup.add(CGAcolorbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=CGAcolorMarkup)
 def CGAcolorQuest(message):
-    if(message.text==CGAMandlistEdt[18]):
+    if(message.text==CGAMandlistEdt[15]):
         return True
     else:
         return False
 def CGAcolorSlides(message):
-    if(message.text==CGAMandlistEdt[19]):
+    if(message.text==CGAMandlistEdt[16]):
         return True
     else:
         return False
 def CGAcolorAss(message):
-    if(message.text==CGAMandlistEdt[20]):
+    if(message.text==CGAMandlistEdt[17]):
         return True
     else:
         return False
