@@ -3718,10 +3718,44 @@ def send_principleCGAQuest(message):
 @bot.message_handler(func=principleCGASlides)
 def send_principleCGASlides(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1wGx28fxPAJWDgcd682S6cJI65xjl5KtS?usp=drive_link") 
+
 #طرق التلوين
+CGAMandlistEdt[19]="سلايدات طرق التلوين"
+CGAMandlistEdt[20]="واجبات طرق التلوين"
 @bot.message_handler(func=colorCGA)
 def send_colorCGA(message):
-    bot.send_message(message.chat.id,text="نأسف لا يوجد ما لدينا لهذه المادة")
+    CGAcolorMarkup=ReplyKeyboardMarkup()
+    CGAcolorbtn=[]
+    for i in range(18,21):
+       CGAcolorbtn=KeyboardButton(CGAMandlistEdt[i])
+       CGAcolorMarkup.add(CGAcolorbtn)
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=CGAcolorMarkup)
+def CGAcolorQuest(message):
+    if(message.text==CGAMandlistEdt[18]):
+        return True
+    else:
+        return False
+def CGAcolorSlides(message):
+    if(message.text==CGAMandlistEdt[19]):
+        return True
+    else:
+        return False
+def CGAcolorAss(message):
+    if(message.text==CGAMandlistEdt[20]):
+        return True
+    else:
+        return False
+@bot.message_handler(func=CGAcolorQuest)
+def send_CGAcolorQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1CHFF0OfZhQzX6uiDIWYndDGjnzgD7p6b?usp=drive_link")
+@bot.message_handler(func=CGAcolorSlides)
+def send_CGAcolorSlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1MrozeQT-ZLBVCZ13t1H58vqbtxlodZqb?usp=drive_link") 
+@bot.message_handler(func=CGAcolorAss)
+def send_CGAcolorAss(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1K23GVdbziFTnU-N2_lCAnHyJbXRJUGaQ?usp=drive_link")
+
+    
 #2D Animation رسوم متحركة ثنائية الابعاد
 @bot.message_handler(func=a2dCGA)
 def send_a2dCGA(message):
