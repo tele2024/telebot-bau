@@ -93,7 +93,7 @@ concatFirstSum(CISOptlist, "اسئلة", "ملخص", "كتاب", CISOptlistEdt)
 CGAMandlist=["تحليل وتصميم الخوارزميات","تصميم وادارة قواعد البيانات (1)","مختبر تصميم وادارة قواعد البيانات (1)","الرياضيات للرسم الحاسوبي","مبادئ الرسم الحاسوبي","طرق التلوين","الرسوم المتحركة ثنائية الابعاد","مختبر الرسوم المتحركة ثنائية الابعاد","تطبيقات الحاسوب في الفنون","البرمجة المرئية للرسم الحاسوبي","برمجة تطبيقات الانترنت","مختبر برمجة تطبيقات الانترنت","الرسومات التفاعلية","تصميم القصة المصورة","تصميم النماذج ثلاثية الابعاد","تصميم الشخصيات ثلاثية الابعاد","الوسائط المتعددة","تحريك الشخصيات ثلاثية الابعاد","تفاعل الانسان والحاسب الآلي","تصميم الافلام الرقمية","مختبر تصميم الافلام الرقمية"]
 CGAMandlistEdt=[]
 concatFirstSum(CGAMandlist, "اسئلة", "ملخص", "كتاب", CGAMandlistEdt)
-CGAOptlist=["الحوسبة المتوازية في الرسم الحاسوبي","معالجة الصور والرؤيا الرقمية","تصميم الالعاب","موضوعات خاصة في الرسم الحاسوبي"]
+CGAOptlist=["الحوسبة المتوازية في الرسم الحاسوبي","معالجة الصور والرؤيا الرقمية","تصميم الالعاب","موضوعات خاصة في الرسم الحاسوبي","برمجة الالعاب"]
 CGAOptlistEdt=[]
 concatFirstSum(CGAOptlist, "اسئلة", "ملخص", "كتاب", CGAOptlistEdt)
 
@@ -4348,6 +4348,13 @@ def TopicCGAopt(message):
         return True
     else:
         return False
+def GameProgCGAopt(message):
+    if(message.text==CGAOptlist[4]):
+        return True
+    else:
+        return False
+
+
 
 
 
@@ -4408,6 +4415,23 @@ def TopicCGAoptSummary(message):
 @bot.message_handler(func=TopicCGAoptSummary)
 def send_TopicCGAoptSummary(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1ijbxpOpWHXJ_cFme8Yxlc-httS5DLV8q?usp=drive_link") 
+
+#CGA Game Programming
+@bot.message_handler(func=GameProgCGAopt)
+def send_GameProgCGAopt(message):
+    GameProgCGAoptMarkup=ReplyKeyboardMarkup()
+    GameProgCGAoptbtn=KeyboardButton(CGAOptlistEdt[12])
+    GameProgCGAoptMarkup.add(GameProgCGAoptbtn)
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=GameProgCGAoptMarkup)
+def GameProgCGAoptQuest(message):
+    if(message.text==CGAOptlistEdt[12]):
+        return True
+    else:
+        return False
+
+@bot.message_handler(func=GameProgCGAoptQuest)
+def send_CGAQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1bPHKziK7Z5Lvt9GqY2S-1fMPAsC_ISeB?usp=drive_link")
 
 
 #communication 
