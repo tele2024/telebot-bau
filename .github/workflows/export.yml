@@ -15,9 +15,8 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'  # Replace with your desired Python version
-      - name: pip update
-        run: pip install --upgrade pip
+    
       - name: Install dependencies
-        run: pip install sqlite3 pandas  # Install sqlite3 and pandas libraries
+        run: pip install -r requirements.txt
       - name: Run your Python script
         run: python myBot.py  # Replace with your script name
