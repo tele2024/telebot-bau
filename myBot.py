@@ -90,7 +90,7 @@ concatFirstSum(CSOptlist, "اسئلة", "ملخص", "كتاب", CSOptlistEdt)
 CISOptlist=["تصنيف وتقييم الانماط","انظمة المعـلومات الجغرافية","انظمة التجارة الالكترونية"]
 CISOptlistEdt=[]
 concatFirstSum(CISOptlist, "اسئلة", "ملخص", "كتاب", CISOptlistEdt)
-CGAMandlist=["تحليل وتصميم الخوارزميات","تصميم وادارة قواعد البيانات (1)","مختبر تصميم وادارة قواعد البيانات (1)","الرياضيات للرسم الحاسوبي","مبادئ الرسم الحاسوبي","طرق التلوين","الرسوم المتحركة ثنائية الابعاد","مختبر الرسوم المتحركة ثنائية الابعاد","تطبيقات الحاسوب في الفنون","البرمجة المرئية للرسم الحاسوبي","برمجة تطبيقات الانترنت","مختبر برمجة تطبيقات الانترنت","الرسومات التفاعلية","تصميم القصة المصورة","تصميم النماذج ثلاثية الابعاد","تصميم الشخصيات ثلاثية الابعاد","الوسائط المتعددة","تحريك الشخصيات ثلاثية الابعاد","تفاعل الانسان والحاسب الآلي","تصميم الافلام الرقمية","مختبر تصميم الافلام الرقمية"]
+CGAMandlist=["تحليل وتصميم الخوارزميات","تصميم وادارة قواعد البيانات (1)","مختبر تصميم وادارة قواعد البيانات (1)","الرياضيات للرسم الحاسوبي","مبادئ الرسم الحاسوبي","طرق التلوين","الرسوم المتحركة ثنائية الابعاد","مختبر الرسوم المتحركة ثنائية الابعاد","تطبيقات الحاسوب في الفنون","البرمجة المرئية للرسم الحاسوبي","برمجة تطبيقات الانترنت","مختبر برمجة تطبيقات الانترنت","الرسومات التفاعلية","تصميم القصة المصورة","تصميم النماذج ثلاثية الابعاد","تصميم الشخصيات ثلاثية الابعاد","الوسائط المتعددة","تحريك الشخصيات ثلاثية الابعاد","تفاعل الانسان والحاسب الآلي","تصميم الافلام الرقمية","مختبر تصميم الافلام الرقمية","مبادئ الفنون الجميلة"]
 CGAMandlistEdt=[]
 concatFirstSum(CGAMandlist, "اسئلة", "ملخص", "كتاب", CGAMandlistEdt)
 CGAOptlist=["الحوسبة المتوازية في الرسم الحاسوبي","معالجة الصور والرؤيا الرقمية","تصميم الالعاب","موضوعات خاصة في الرسم الحاسوبي","برمجة الالعاب"]
@@ -3591,7 +3591,6 @@ def send_CGAmand(message):
             CGAMandMarkup.add(CGAMandbtn,CGAMandbtn2)
         else:
             CGAMandbtn=KeyboardButton(CGAMandlist[i])
-    CGAMandMarkup.add(CGAMandlist[20])
     bot.send_message(message.chat.id,text="اختر المادة",reply_markup=CGAMandMarkup)
 def MathCGA(message):
     if(message.text==CGAMandlist[3]):
@@ -3668,17 +3667,20 @@ def filmLabCGA(message):
         return True
     else:
         return False
+def beautyCGA(message):
+    if(message.text==CGAMandlist[21]):
+        return True
+    else:
+        return False
 
 
-
-
-
-#الرياضيات للرسم الحاسوبي 
+#الرياضيات للرسم الحاسوبي
+CGAMandlistEdt[10]="دفتر الرياضيات للرسم الحاسوبي" 
 @bot.message_handler(func=MathCGA)
 def send_MathCGA(message):
     MathCGAMarkup=ReplyKeyboardMarkup()
     MathCGAbtn=[]
-    for i in range(9,12):
+    for i in range(9,11):
        MathCGAbtn=KeyboardButton(CGAMandlistEdt[i])
        MathCGAMarkup.add(MathCGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=MathCGAMarkup)
@@ -3687,18 +3689,24 @@ def MathCGAQuest(message):
         return True
     else:
         return False
+def MathCGANote(message):
+    if(message.text==CGAMandlistEdt[10]):
+        return True
+    else:
+        return False
 
 @bot.message_handler(func=MathCGAQuest)
 def send_MathCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1-L3IiIAx7RVJ288HtFk3nuSvSC6uhZfP?usp=drive_link")
-    
+@bot.message_handler(func=MathCGANote)
+def send_MathCGANote(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1r6pk2hS5Y6bpi_hnWbFzE2tRFljdmEx1?usp=drive_link")
 #مبادئ الرسم الحاسوبي
-CGAMandlistEdt[13]="سلايدات مبادئ الرسم الحاسوبي"
 @bot.message_handler(func=principleCGA)
 def send_principleCGA(message):
     principleCGAMarkup=ReplyKeyboardMarkup()
     principleCGAbtn=[]
-    for i in range(12,14):
+    for i in range(12,15):
        principleCGAbtn=KeyboardButton(CGAMandlistEdt[i])
        principleCGAMarkup.add(principleCGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=principleCGAMarkup)
@@ -3707,17 +3715,26 @@ def principleCGAQuest(message):
         return True
     else:
         return False
-def principleCGASlides(message):
+def principleCGASummary(message):
     if(message.text==CGAMandlistEdt[13]):
         return True
     else:
         return False
+def principleCGABook(message):
+    if(message.text==CGAMandlistEdt[14]):
+        return True
+    else:
+        return False
+
 @bot.message_handler(func=principleCGAQuest)
 def send_principleCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1QX-bSuRseFcngS59Zg020GrfOjqIppY_?usp=drive_link")
-@bot.message_handler(func=principleCGASlides)
-def send_principleCGASlides(message):
-    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1wGx28fxPAJWDgcd682S6cJI65xjl5KtS?usp=drive_link") 
+@bot.message_handler(func=principleCGASummary)
+def send_principleCGASummary(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1-1Nl5Gr13uYWTPlHqGZBKXCtUdZbjlLk?usp=drive_link") 
+@bot.message_handler(func=principleCGABook)
+def send_principleCGABook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1dKie6BCe6ULtS2phhurr3hIGPqaWYe3m?usp=drive_link")
 
 #طرق التلوين
 CGAMandlistEdt[16]="سلايدات طرق التلوين"
@@ -3757,19 +3774,31 @@ def send_CGAcolorAss(message):
 
     
 #2D Animation رسوم متحركة ثنائية الابعاد
+CGAMandlistEdt[19]="سلايدات الرسوم المتحركة ثنائية الابعاد"
 @bot.message_handler(func=a2dCGA)
 def send_a2dCGA(message):
     a2dCGAMarkup=ReplyKeyboardMarkup()
-    a2dCGAMarkup.add(CGAMandlistEdt[18])
+    a2dCGAbtn=[]
+    for i in range(18,20):
+       a2dCGAbtn=KeyboardButton(CGAMandlistEdt[i])
+       a2dCGAMarkup.add(a2dCGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=a2dCGAMarkup)
 def a2dCGAQuest(message):
     if(message.text==CGAMandlistEdt[18]):
         return True
     else:
         return False
+def a2dCGASlides(message):
+    if(message.text==CGAMandlistEdt[19]):
+        return True
+    else:
+        return False
 @bot.message_handler(func=a2dCGAQuest)
 def send_a2dCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1hj65fiIZODtO4aPzL1SXOujviKtSmDtP?usp=sharing")
+@bot.message_handler(func=a2dCGASlides)
+def send_a2dCGASlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Ef0QbvOeYx3MaDxAN3_Q8-7eWilY7kxd?usp=drive_link") 
 
 #2D Animation Lab
 @bot.message_handler(func=lab2dCGA)
@@ -3791,10 +3820,20 @@ def send_lab2dCGAQuest(message):
 @bot.message_handler(func=ArtCGA)
 def send_ArtCGA(message):
     ArtCGAMarkup=ReplyKeyboardMarkup()
-    ArtCGAMarkup.add(CGAMandlistEdt[24])
+    ArtCGAbtn=[]
+    for i in range(24,27):
+        if (i==25):
+            continue
+        ArtCGAbtn=KeyboardButton(CGAMandlistEdt[i])
+        ArtCGAMarkup.add(ArtCGAbtn)   
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=ArtCGAMarkup)
 def ArtCGAQuest(message):
     if(message.text==CGAMandlistEdt[24]):
+        return True
+    else:
+        return False
+def ArtCGABook(message):
+    if(message.text==CGAMandlistEdt[26]):
         return True
     else:
         return False
@@ -3802,6 +3841,10 @@ def ArtCGAQuest(message):
 @bot.message_handler(func=ArtCGAQuest)
 def send_ArtCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1YixqNpMOe-vT3Puw26_r1EbLeBhxUK81?usp=drive_link")
+@bot.message_handler(func=ArtCGABook)
+def send_ArtCGABook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1q9zOM3n2vjpMqL5xnmZdobU95rAydsr7?usp=drive_link")
+
 
 #Android CGA
 @bot.message_handler(func=AndCGA)
@@ -3859,7 +3902,7 @@ CGAMandlistEdt[40]="سلايدات تصميم القصة المصورة"
 def send_comicCGA(message):
     comicCGAMarkup=ReplyKeyboardMarkup()
     comicCGAbtn=[]
-    for i in range(39,41):
+    for i in range(39,42):
        comicCGAbtn=KeyboardButton(CGAMandlistEdt[i])
        comicCGAMarkup.add(comicCGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=comicCGAMarkup)
@@ -3873,29 +3916,58 @@ def comicCGASummary(message):
         return True
     else:
         return False
-
+def comicCGABook(message):
+    if(message.text==CGAMandlistEdt[41]):
+        return True
+    else:
+        return False
 @bot.message_handler(func=comicCGAQuest)
 def send_comicCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1NFqqz13lAQm6xWfS-hpbvIardFIgRHSs?usp=drive_link")
 @bot.message_handler(func=comicCGASummary)
 def send_comicCGASummary(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1uK-kJws4rtjBniACMFohXKWLPpROcQfY?usp=drive_link") 
+@bot.message_handler(func=comicCGABook)
+def send_comicCGABook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1Eegl_uQSU0kF5o4nIZDuhrhPAg76FTht?usp=drive_link")
+
 
 #تصميم النماذج ثلاثية الابعاد
+CGAMandlistEdt[43]="سلايدات تصميم النماذج ثلاثية الابعاد"
+CGAMandlistEdt[44]="واجبات تصميم النماذج ثلاثية الابعاد"
 @bot.message_handler(func=a3dCGA)
 def send_a3dCGA(message):
     a3dCGAMarkup=ReplyKeyboardMarkup()
-    a3dCGAMarkup.add(CGAMandlistEdt[42])
+    a3dCGAbtn=[]
+    for i in range(42,45):
+       a3dCGAbtn=KeyboardButton(CGAMandlistEdt[i])
+       a3dCGAMarkup.add(a3dCGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=a3dCGAMarkup)
 def a3dCGAQuest(message):
     if(message.text==CGAMandlistEdt[42]):
         return True
     else:
         return False
-
+def a3dCGASlides(message):
+    if(message.text==CGAMandlistEdt[43]):
+        return True
+    else:
+        return False
+def a3dCGAAss(message):
+    if(message.text==CGAMandlistEdt[44]):
+        return True
+    else:
+        return False
 @bot.message_handler(func=a3dCGAQuest)
 def send_a3dCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1fEwftEoAMo-TnHRhW7O6i4Fo3SM8U7F6?usp=drive_link")
+@bot.message_handler(func=a3dCGASlides)
+def send_a3dCGASlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1pJPZkGuehgc-Ey1KhUvD6LXScGrF8Tqj?usp=drive_link") 
+@bot.message_handler(func=a3dCGAAss)
+def send_a3dCGAAss(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1QdW-o4_mZHQA8PpcJwo9F9G7pINyIQNu?usp=drive_link")
+
 
 #Character تصميم الشخصيات ثلاثية الابعاد 
 @bot.message_handler(func=charCGA)
@@ -3905,14 +3977,25 @@ def send_charCGA(message):
 #تحريك الشخصيات ثلاثية الابعاد
 @bot.message_handler(func=a3dAnimCGA)
 def send_a3dAnimCGA(message):
-    bot.send_message(message.chat.id,text="سوري ما عنا اشي عنها")
+    a3dAnimCGAMarkup=ReplyKeyboardMarkup()
+    a3dAnimCGAMarkup.add(CGAMandlistEdt[51])
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=a3dAnimCGAMarkup)
+def a3dAnimCGAQuest(message):
+    if(message.text==CGAMandlistEdt[51]):
+        return True
+    else:
+        return False
+@bot.message_handler(func=a3dAnimCGAQuest)
+def send_a3dAnimCGAQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1RVQ8THhfRsJb1Nz5fqRqDFkd1W5-Dgrp?usp=drive_link")
+
 
 #Human Computer Interaction تفاعل الانسان والحاسب الآلي
 @bot.message_handler(func=HCICGA)
 def send_HCICGA(message):
     HCICGAMarkup=ReplyKeyboardMarkup()
     HCICGAbtn=[]
-    for i in range(54,56):
+    for i in range(54,57):
        HCICGAbtn=KeyboardButton(CGAMandlistEdt[i])
        HCICGAMarkup.add(HCICGAbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=HCICGAMarkup)
@@ -3926,6 +4009,11 @@ def HCICGASummary(message):
         return True
     else:
         return False
+def HCICGABook(message):
+    if(message.text==CGAMandlistEdt[56]):
+        return True
+    else:
+        return False
 
 @bot.message_handler(func=HCICGAQuest)
 def send_HCICGAQuest(message):
@@ -3933,6 +4021,10 @@ def send_HCICGAQuest(message):
 @bot.message_handler(func=HCICGASummary)
 def send_HCICGASummary(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1v6WX5ujFiRd1Kh_xsgVNMMgN_FVDGwWA?usp=drive_link") 
+@bot.message_handler(func=HCICGABook)
+def send_HCICGABook(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1sGQBYSo8F1ZYpmUWoWdhjYLCc5IO-ftW?usp=drive_link")
+
 
 #تصميم الافلام الرقمية
 CGAMandlistEdt[59]="سلايدات تصميم الافلام الرقمية"
@@ -3971,7 +4063,7 @@ def send_filmCGASlides(message):
 
 #مختبر تصميم الافلام الرقمية
 @bot.message_handler(func=filmLabCGA)
-def send_CGA(message):
+def send_filmLabCGA(message):
     filmLabCGAMarkup=ReplyKeyboardMarkup()
     filmLabCGAMarkup.add(CGAMandlistEdt[60])
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=filmLabCGAMarkup)
@@ -3984,8 +4076,22 @@ def filmLabCGAQuest(message):
 @bot.message_handler(func=filmLabCGAQuest)
 def send_filmLabCGAQuest(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/14CPnH70zXhbGfP-IWUc4Az0LT2_8JuU6?usp=sharing")
+  
+#مبادئ الفنون الجميلة
+@bot.message_handler(func=beautyCGA)
+def send_beautyCGA(message):
+    beautyCGAMarkup=ReplyKeyboardMarkup()
+    beautyCGAMarkup.add(CGAMandlistEdt[63])
+    bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=beautyCGAMarkup)
+def beautyCGAQuest(message):
+    if(message.text==CGAMandlistEdt[63]):
+        return True
+    else:
+        return False
 
-
+@bot.message_handler(func=beautyCGAQuest)
+def send_beautyCGAQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1kSw9rLbMQGhJKtS2sDSzYTnUyYi32pEQ?usp=drive_link")
 
 #متطلب تخصص اختياري
 @bot.message_handler(func=majorOpt)
@@ -4404,17 +4510,36 @@ def send_GameCGAoptSummary(message):
 @bot.message_handler(func=TopicCGAopt)
 def send_TopicCGA(message):
     TopicCGAoptMarkup=ReplyKeyboardMarkup()
-    TopicCGAoptMarkup.add(CGAOptlistEdt[10])
+    TopicCGAoptbtn=[]
+    for i in range(9,12):
+       TopicCGAoptbtn=KeyboardButton(CGAOptlistEdt[i])
+       TopicCGAoptMarkup.add(TopicCGAoptbtn)
     bot.send_message(message.chat.id,text="اختر ما تريد",reply_markup=TopicCGAoptMarkup)
 
+def TopicCGAoptQuest(message):
+    if(message.text==CGAOptlistEdt[9]):
+        return True
+    else:
+        return False
 def TopicCGAoptSummary(message):
     if(message.text==CGAOptlistEdt[10]):
         return True
     else:
         return False
+def TopicCGAoptSlides(message):
+    if(message.text==CGAOptlistEdt[11]):
+        return True
+    else:
+        return False
+@bot.message_handler(func=TopicCGAoptQuest)
+def send_TopicCGAoptQuest(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/18xBWzSRpbsY1T0nUrKQddETnmGU0lfbT?usp=drive_link")
 @bot.message_handler(func=TopicCGAoptSummary)
 def send_TopicCGAoptSummary(message):
     bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1ijbxpOpWHXJ_cFme8Yxlc-httS5DLV8q?usp=drive_link") 
+@bot.message_handler(func=TopicCGAoptSlides)
+def send_TopicCGAoptSlides(message):
+    bot.send_message(message.chat.id,text="https://drive.google.com/drive/folders/1RekBdmDmAXearmwPIDIRRiyC-WuLLSAq?usp=drive_link")
 
 #CGA Game Programming
 @bot.message_handler(func=GameProgCGAopt)
