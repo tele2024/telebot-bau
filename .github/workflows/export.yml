@@ -1,31 +1,21 @@
-name: Export Database and Deploy Bot
+name: Convert Database to CSV
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
+on: [push]  # Trigger the workflow on a push event to the main branch
 
 jobs:
-  export_and_deploy:
-    runs-on: ubuntu-latest
-
+  convert-db:
+    runs-on: ubuntu-latest  # Specify the runner environment
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3  # Checkout your code from the repository
+      - name: Grant write permissions  # Grant write access to temporary storage
+        uses: actions/checkout@v3
         with:
-          python-version: '3.9'
-          
+          permissions: write  # This grants write access to the runner's temporary storage
+      - name: Use Python 
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'  # Replace with your desired Python version
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Deploy Bot
-        run: python myBot.py
-
-      - name: Export Database to CSV
-        run: python export_to_csv.py
+        run: pip install sqlite3 pandas  # Install sqlite3 and pandas libraries
+      - name: Run your Python script
+        run: python myBot.py  # Replace with your script name
